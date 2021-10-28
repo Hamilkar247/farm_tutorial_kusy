@@ -13,8 +13,8 @@ from database import (
     remove_todo
 )
 
-
-origins = ['https://localhost:3000']
+# uwaga - to port dla reacta
+origins = ['http://localhost:3000']
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,7 +36,7 @@ async def get_todo():
     return response
 
 
-@app.get("/api/todo{id}", response_model=Todo)
+@app.get("/api/todo/{id}", response_model=Todo)
 async def get_todo_by_id(title):
     response = await fetch_one_todo(title)
     if response:
@@ -52,7 +52,7 @@ async def post_todo(todo:Todo):
     raise HTTPException(400, "Something went wrong / Bad Request")
 
 
-@app.put("/api/todo{id}", response_model=Todo)
+@app.put("/api/todo/{id}", response_model=Todo)
 async def put_todo(title:str, desc:str):
     response = await update_todo(title, desc)
     if response:
@@ -60,7 +60,7 @@ async def put_todo(title:str, desc:str):
     raise HTTPException(404, f"there is no TODO item with this title {title}")
 
 
-@app.delete("/api/todo{id}")
+@app.delete("/api/todo/{id}")
 async def delete_todo(title):
     response = await remove_todo(title)
     if response:

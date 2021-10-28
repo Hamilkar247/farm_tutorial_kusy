@@ -5,6 +5,9 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoView from './components/TodoListView';
 
+
+
+
 function App() {
 
   const [todoList, setTodoList] = useState([{}])
@@ -19,8 +22,9 @@ function App() {
       })
   });
 
+  // Post a todo
   const addTodoHandler = () => {
-    axios.post('http://localhost:8000/api/todo/', { 'title':
+    axios.post('http://localhost:8000/api/todo', { 'title':
     title, 'description': desc })
     .then(res => console.log(res))
   };
@@ -33,14 +37,14 @@ function App() {
         <h6 className="card text-white bg-primary mb-3">FASTAPI - React- MongoDB</h6>
         <div className="card-body">
           <h5 className="card text-white bg-dark mb-3">Add your task</h5>
-          <span className="card-text">
-            <input className="mb-2 form-control titleIn" onChange={event => setTitle(event.target.value)} placeholder='Title'/>
-            <input className="mb-2 form-control desIn" onChange={event => setDesc(event.target.value)} placeholder='Description'/>
-            <button className="btn btn-outline-primary mx-2 mb-3" style={{'borderRadius':'50px', "font-weight":"bold"}} onClick={addTodoHandler}>Add Task</button>
-          </span>
+            <span className="card-text">
+              <input className="mb-2 form-control titleIn" onChange={event => setTitle(event.target.value)} placeholder='Title'/>
+              <input className="mb-2 form-control desIn" onChange={event => setDesc(event.target.value)} placeholder='Description'/>
+              <button className="btn btn-outline-primary mx-2 mb-3" style={{'borderRadius':'50px', "font-weight":"bold"}} onClick={addTodoHandler}>Add Task</button>
+            </span>
           <h5 className="card text-white bg-dark mb-3">Yours Tasks</h5>
           <div>
-          <TodoView todoList= {todoList} />
+            <TodoView todoList= {todoList} />
           </div>
         </div>
               <h6 className="card text-dark bg-warning py-1 mb-0" >Copyright 2021, All rights reserved &copy;</h6>

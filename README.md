@@ -16,11 +16,11 @@ odpalamy przeglądarkę 127.0.0.1/27017 (domyślny port mongodb) i sprawdzamy cz
 
 `mongodb-compass`
 
-3. w folderze gdzie znajduje się main.py (obecnie jest to folder główny projektu - a elegancko by bylo jakby fastapi bylo zapakowane do folderu backend) uruchamiamy komendę
+3. w folderze backend znajduje się main.py uruchamiamy komendę
 
-`uvicorn main:app --reload`
+`uvicorn main:app --port 8000 --reload`
 
-dzięki czemu odpali sie na ustawionym porcie 127.0.0.1:3000
+dzięki czemu odpali sie na ustawionym porcie 127.0.0.1:8000
 
 co sprawdzmy najpierw wstukujac to, a potem dodajac postfix /docs
 (jest też alternatywna dokumentacja wtedy postfix jest /redoc
