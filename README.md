@@ -27,6 +27,7 @@ co sprawdzmy najpierw wstukujac to, a potem dodajac postfix /docs
 
 
 4. odpalenie frontenda reacta
+   4a. - instalacja paczek z packaga.json możemy wykonać poprzez wykonanie 
 
 przechodzimy do folderu 'frontend' ( z wlaczonym conda activate 'farm-kusy' )
 i odpalamy 'npm start' w konsoli

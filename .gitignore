@@ -1,3 +1,8 @@
 .idea
 __pycache__
 *.swp
+.direnv
+.envrc
+frontend/npm-debug.log
+npm-debug.log
+node_modules
